@@ -1,4 +1,3 @@
-import json
 from pytwitter import Api
 from cryptography.x509 import load_pem_x509_certificate
 import pandas as pd

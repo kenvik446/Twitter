@@ -4,20 +4,19 @@ import pandas as pd
 import sqlalchemy as db
 api = Api(bearer_token= "AAAAAAAAAAAAAAAAAAAAAExweQEAAAAAcHYwAIXpI8VrhLNpc6ELBT%2BOUX0%3DjMNh7b7NgR4e6FPB7LK03O3qHiqeSZ2jtDaylQXvizysxYtnzr" )
 
-# Getting user ID By username
-name = input("Please enter username: ")
+#Getting user ID By username
+name=input("Enter username: ")
 s=(api.get_user(username= name))
-ID=(s.data.id) #to get just id
+ID=(s.data.id)  #to get just id
 
-# This should return a dictionary of the following
-# The parameters should all be of type list([])
-def get_dict(ids, names, usernames):
-
+#This should return a dictionary of the following
+#The parameters should all be of type list([])
+def get_dict(ids, names, usernames) :
     dict = {
-              'ids' : ids,
-              'names' : names,
-              'usernames' : usernames
-           }
+        'ids' : ids,
+        'names' : names,
+        'usernames' : usernames
+        }
     return dict
 
 # This should return a dictionary by calling the get_dict

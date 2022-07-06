@@ -4,7 +4,7 @@ import pandas as pd
 import sqlalchemy as db
 Bearer_Token = "AAAAAAAAAAAAAAAAAAAAAExweQEAAAAAcHYwAIXpI8VrhLNpc6ELBT"
 Bearer_Token += "%2BOUX0%3DjMNh7b7NgR4e6FPB7LK03O3qHiqeSZ2jtDaylQXvizysxYtnzr"
-api= Api(bearer_token=BA)
+api = Api(bearer_token = BA)
 # Getting user ID By username
 name= input("Enter username: ")
 s=(api.get_user(username=name))

@@ -4,7 +4,7 @@ import pandas as pd
 import sqlalchemy as db
 Bearer_Token = "AAAAAAAAAAAAAAAAAAAAAExweQEAAAAAcHYwAIXpI8VrhLNpc6ELBT"
 Bearer_Token += "%2BOUX0%3DjMNh7b7NgR4e6FPB7LK03O3qHiqeSZ2jtDaylQXvizysxYtnzr"
-api = Api(bearer_token=BA)
+api = Api(bearer_token=Bearer_Token)
 # Getting user ID By username
 name = input("Enter username: ")
 s = (api.get_user(username=name))
@@ -45,8 +45,8 @@ def create_database(info, db_name, table_name):
     data = pd.DataFrame.from_dict(users_followers)
     engine = db.create_engine('sqlite:///' + db_name + '.db')
     data.to_sql(table_name, con=engine, if_exists='replace', index=False)
-    query_result = engine.execute("SELECT * FROM") + table_name + ";")
-        query_result.fetchall()
+    query_result = engine.execute(("SELECT * FROM") + table_name + ";").fetchall()
+        #query_result.fetchall()
     print(pd.DataFrame(query_result), "\n")
 
 

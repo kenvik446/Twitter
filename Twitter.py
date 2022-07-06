@@ -7,7 +7,7 @@ Bearer_Token += "%2BOUX0%3DjMNh7b7NgR4e6FPB7LK03O3qHiqeSZ2jtDaylQXvizysxYtnzr"
 api = Api(bearer_token=BA)
 # Getting user ID By username
 name = input("Enter username: ")
-s = (api.get_user(username = name))
+s = (api.get_user(username= name))
 # to get just id
 ID = (s.data.id)
 
@@ -47,7 +47,8 @@ def create_database(info, db_name, table_name):
     engine = db.create_engine('sqlite:///' + db_name + '.db')
 
     data.to_sql(table_name, con=engine, if_exists='replace', index=False)
-    query_result = engine.execute("SELECT * FROM" + table_name + ";").fetchall()
+    query_result = engine.execute("SELECT * FROM")
+    query_result += + table_name + ";").fetchall()
     print(pd.DataFrame(query_result), "\n")
 
 

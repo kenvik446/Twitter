@@ -45,7 +45,6 @@ def create_database(info, db_name, table_name):
 
     data = pd.DataFrame.from_dict(users_followers)
     engine = db.create_engine('sqlite:///' + db_name + '.db')
-
     data.to_sql(table_name, con=engine, if_exists='replace', index=False)
     query_result = engine.execute("SELECT * FROM") + table_name + ";")
     query_result.fetchall()

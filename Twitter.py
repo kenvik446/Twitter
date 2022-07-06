@@ -51,7 +51,7 @@ def create_database(info, db_name, table_name):
 
 
 # Getting users followers by ID
-max = input("Enter number of followers you would like to see:")
+max =input("Enter number of followers you would like to see: ")
 users_followers = get_users_followers(ID, int(max))
 print(users_followers)
 create_database(users_followers, "Twitter", "users_followers")
